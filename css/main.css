@@ -1,0 +1,886 @@
+@charset "utf-8";
+/*初始化样式，清除默认的样式*/
+*{
+    margin:0;
+    padding:0;
+    font-family: "Microsoft Yahei", simSum;
+    list-style:none;
+    -webkit-user-select:none;
+}
+h2{
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration:none;
+}
+html,body,img{
+    border:0;
+}
+html,body{
+    /*body边框的边框去不掉*/
+    /*border:none;*/
+    /**border:none;*/
+    background:#fff;
+}
+
+
+
+/*                                      头部样式                               */
+.header{
+   overflow:hidden;
+}
+/*上部黑色区域*/
+.header_top{
+    height:30px;
+    background:#333;
+}
+/*黑框左侧*/
+.header_top_left{
+    margin:6px 0 0 30px;
+    float:left;
+}
+.header_top_left a{
+    font-size:14px;
+    text-decoration:none;
+    float:left;
+}
+/*黑框左侧标志  拉勾APP*/
+.header_top_left1{
+    background:url(../images/header_top_phone.png) no-repeat 10px 0;
+    padding:0 13px 0 25px;
+    color:#11d788;
+}
+.header_top_left1:hover{
+    color:#06e2a7;
+}
+.header_top_left2{
+    border-left:1px solid #5d5d5d;
+    color:#aeadad;
+    padding:0 15px 0 13px;
+}
+.header_top_left2:hover{
+    color:#fff;
+}
+/*黑框右侧*/
+.header_top_right{
+    margin:6px 30px 0 0;
+    float:right;
+}
+/*黑框右侧 注册登录*/
+.header_top_right a{
+    font-size:14px;
+    text-decoration:none;
+    float:right;
+}
+.header_top_right a:hover{
+    color:#fff;
+}
+.header_top_right1{
+    border-left:1px solid #5d5d5d;
+    color:#c4c3c3;
+    padding:0 0 0 13px;
+}
+.header_top_right2{
+    color:#c4c3c3;
+    padding:0 13px 0 0;
+}
+
+
+/*头部下侧 标志区域*/
+.header_down{
+    width:1347px;
+    overflow:hidden;
+    background-color:#fafafa;
+    border:1px solid #d2d2d2;
+}
+/*拉勾标志*/
+.header_down_logo{
+    width:260px;
+    height:57px;
+    margin-left:162px;
+    float:left;
+}
+.header_down_logo img{
+    border:none;
+    margin-top:11px;
+    float:left;
+}
+.header_down_logo1{
+    width:150px;
+    height:57px;
+    float:left;
+}
+/*北京市*/
+.header_down_logo1_1{
+    width:58px;
+    height:18px;
+    font-size:18px;
+    font-style: normal;
+    margin:25px 0 0 13px;
+    /*cursor:text;*/
+    float:left;
+}
+/*切换城市*/
+.header_down_logo1_2{
+    width:65px;
+    height:15px;
+    font-size:12px;
+    font-style:normal;
+    color:#999999;
+    margin:30px 0 0 0;
+    cursor:pointer;
+    float:left;
+}
+/*切换城市右侧导航*/
+.header_down_nav{
+    width:300px;
+    height:57px;
+    float:left;
+}
+.header_down_nav li{
+    width:48px;
+    height:57px;
+    margin:0 40px 0 0;
+    float:left;
+}
+.header_down_nav a{
+    display:block;
+    line-height:55px;
+    font-size:18px;
+    text-decoration:none;
+    float:left;
+}
+.header_down_nav1{
+    color:#000;
+    border-bottom:2px solid #00b38a;
+}
+.header_down_nav2{
+    color:#999999;
+}
+.header_down_nav3{
+    color:#999999;
+}
+
+
+.total{
+    overflow:hidden;
+    background:#fff;
+}
+
+
+
+/*                                  主体内容                                     */
+.banner{
+    position:relative;  /*给所有的选项卡 一个参照物  定位的东西只能在  参照物范围内显示*/
+    margin:36px auto;
+    width:1058px;
+    padding-bottom:150px;
+    overflow:hidden;
+    /*background:#06e2a7;*/
+}
+
+
+/*                                 主体左侧列表                                 */
+/*里面的ul是块级元素*/
+.banner_left{
+    overflow:hidden;
+    float:left;
+}
+.banner_left ul{
+    position:relative;/*可以通过position:relative;来增加z-index的大小*/
+    width:233px;
+    padding:20px;
+    background:#fafafa;
+    /*border:2px solid yellow;*/
+}
+.banner_left ul li{
+    /*使用绝对定位来解决*/
+    position:relative;
+    padding:5px;
+}
+.banner_left a{
+    margin-right:22px;
+    font-size:15px;
+    color:#000;
+    text-decoration:none;
+}
+.banner_left a:hover{
+    color:#06e2a7;
+    text-decoration:underline;
+}
+.banner_left i{
+    font-size:18px;
+    font-style:normal;
+}
+.banner_left span{
+    /*制作的是 > 左侧列表  “技术”右边的小图标*/
+    /*如果这里不写inline-block就是使行内元素浮动了*/
+    /*在 IE6 IE7 IE8(Q) 中，浮动的 SPAN 折行浮动在新的一行上，同时位置也脱离了其父容器*/
+    position:absolute;
+    top:10px;
+    right:0;
+    display:inline-block;
+    width:13px;
+    height:14px;
+    background:url(../images/banner_left_li.png) no-repeat;
+}
+.banner_left .banner_left_2{
+    display:block;
+    width:275px;
+    font-size:18px;
+    margin-top:12px;
+    line-height:48px;
+    border-bottom:2px solid #00b38a;
+    /*background:url(../images/banner_left_div.png) no-repeat ;*/
+    background:#fafafa;
+    overflow:hidden;
+}
+.banner_left .banner_left_2 i{
+    margin-left:40px;
+    float:left;
+}
+.banner_left .banner_left_2 img{
+    margin:14px 22px 0 0;
+    border:none;
+    float:right;
+}
+
+.banner_left_1:hover ul{
+    width:233px;
+    padding:18px;
+    z-index:25;/*提高ul在HTML中的层叠优先级*/
+    background:#fff; /*ul的背景颜色*/
+    border:2px solid #cacbcf;
+    border-right-color:#fff;
+}
+/*滑过之后每个li后的小标志变为蓝色*/
+.banner_left_1:hover span{
+    background:url(../images/banner_left_li2.png) no-repeat;  /*给一个换色*/
+}
+
+/*选项卡内容*/
+/*尽量减少代码 来优化性能*/
+.banner_left p{
+    display:none;
+    position:absolute;
+    top:0;
+    left:270px;
+    z-index:10;
+    width:600px;
+    height:500px;
+    border:2px solid #cacbcf;
+    background:#fff;/*div的背景颜色*/
+}
+/*上面的.banner_left p  涵盖了它 所以下面只用修改改变值的属性即可*/
+.banner_left .banner_left_g2{
+    top:170px;
+    height:190px;
+}
+.banner_left .banner_left_g3{
+    top:220px;
+    height:380px;
+}
+.banner_left .banner_left_g4{
+    top:400px;
+    height:288px;
+}
+.banner_left .banner_left_g5{
+    top:320px;
+    height:496px;
+}
+.banner_left .banner_left_g6{
+    top:610px;
+    height:289px;
+}
+.banner_left .banner_left_g7{
+    top:708px;
+    height:240px;
+}
+/*每个外面包的DIV名字都是.banner_left_1  相应下面有一个p 这样写即可*/   /*前代：hover后代*/
+.banner_left_1:hover p {
+    display: block;
+}
+
+
+
+/*                                   主体右侧                            */
+.banner_right{
+    width:754px;
+    overflow:hidden;
+    /*background:#FFFF00;*/
+    float:right;
+}
+/*搜索框*/
+.banner_search{
+    overflow:hidden;
+}
+.banner_search1{
+    width:590px;
+    /*height:38px;*/
+    padding:5px;
+    height:22px;
+    line-height:22px;
+    font-size:15px;
+    background:#fff;
+    border:2px solid #00b38a;
+    float:left;
+}
+.banner_search2{
+    width:150px;
+    height:36px;
+    line-height:36px;
+    text-align:center;
+    font-size:18px;
+    color:#fff;
+    /*padding:4px;*/
+    background: #00b38a;
+    /*border:2px solid #00b38a;*/
+    /*border-left:none;*/
+    cursor:pointer;
+    float:right;
+}
+/*此处有一个兼容性问题*/
+.banner_search2:hover{
+    background:#00a266;
+}
+/*热门搜索*/
+.banner_right2{
+    margin-top:8px;
+    padding:2px 0 2px 0;
+    overflow:hidden;
+}
+.banner_right2 dt{
+    font-size:12px;
+    float:left;
+}
+.banner_right2 dd{
+    margin:0 10px 0 6px;
+    font-size:12px;
+    text-decoration:none;
+    float:left;
+}
+.banner_right2 a{
+    text-decoration:none;
+}
+.banner_right2 a:hover{
+    color:#06e2a7;
+    text-decoration:underline;
+}
+.banner_right2 .select{
+    color:#06e2a7;
+}
+/*轮播图*/
+.banner_right3{/*利用div来创造轮播图的可是窗口*/
+    position:relative;/*此处设置的定位是为了写JS的时候找到父级参照物*/
+    /*width:613px;*/
+    height:160px;
+    margin-top:22px;
+    overflow:hidden;
+}
+/*轮播图左侧*/
+.banner_right3_banner{/*将整体的图片放到一个div中*/
+    position:absolute;/*轮播图实现的运原理*/
+    top:0;
+    left:0;
+    z-index:5;
+    width:613px;
+    height:800px;
+    float:left;
+    /*overflow:hidden;*/
+}
+.banner_right3_banner img{
+    border:0;
+    vertical-align:top; /*解决上下图片之间之间的缝隙*/
+}
+/*轮播图右侧*/
+.banner_right3_small{
+    position:relative;
+    float:right;
+}
+.banner_right3_small span{
+    position:absolute;
+    top:0;
+    left:-6px;
+    width:127px;
+    height:50px;
+    background:url(../images/banner_right3_4.png) no-repeat;
+    z-index:5;
+}
+.banner_right3_small ul{
+    width:121px;  /*图片的宽度加上边框的宽度*/
+    height:160px;
+    /*margin-right:5px;*/
+    /*background:#06e2a7;*/
+    /*float:right;*/
+}
+.banner_right3_small li{
+    position:relative;
+    width:113px;
+    height:42px;
+    margin-bottom:5px;
+    border:4px solid #d3d3d3;
+}
+.banner_right3_small_1{
+    position:absolute;
+    z-index:5;
+    width:113px;
+    height:42px;
+    background:url(../images/banner_right3_8.png) no-repeat;
+}
+/*轮播图下面炫酷宣传框*/
+.banner_right4 {
+    margin-top:20px;
+    overflow:hidden;
+}
+.banner_right4 li{
+    width:115px;
+    height:115px;
+    border:1px solid #fafafa;
+    margin:4px;
+    float:left;
+}
+.banner_right4 a{
+    position:relative;
+    display:inline-block;
+    overflow:hidden;
+}
+.banner_right4 div{
+    position:absolute;
+    top:0;
+    left:-115px;
+    width:115px;
+    height:115px;
+    /*这样写的时候可以达到背景颜色透明但文字不透明的效果*/
+    /*background:rgba(0,175,135,0.6);*/
+}
+.banner_right4 b{
+    /*定位之后就不分行内元素和块级元素了*/
+    position:absolute;;
+    top:0;
+    /*display:inline-block;*/
+    width:115px;
+    height:115px;
+    background:#00AF87;
+    opacity:0.6;
+    filter:alpha(opacity=60);
+}
+.banner_right4 span{
+    position:absolute;
+    top:0;
+    width:115px;
+    height:115px;
+    z-index:1;
+}
+.banner_right4 h2{
+    /*当没有固定的宽高值的时候我们增加padding值相当于让其收缩*/
+    padding-top:5px;
+    color:#fff;
+    text-align:center;
+}
+.banner_right4 em{
+    display:inline-block;
+    margin-left:9px;
+    width:95px;
+    height:5px;
+    background:#fff;
+    opacity:0.6;
+    filter:alpha(opacity=60);
+    /*rgba属性ie下不兼容*/
+    /*background:rgba(255,255,255,0.6);*/
+}
+.banner_right4 p{
+    padding:0 9px;
+    font-size:12px;
+    color:#fff;
+}
+.banner_right4 img{
+    /*图片的下面会出现一个几像素的空白*/
+    vertical-align: top;
+}
+/*热门职务 最新职务*/
+.banner_right5{
+    margin-top:27px;
+    background:#f6f6f6;
+    overflow:hidden;
+}
+.banner_right5 li{
+    width:133px;
+    height:38px;
+    text-align:center;
+    line-height:40px;
+    font-size:16px;
+    cursor:pointer;
+    /*border-top:2px solid;*/
+    float:left;
+}
+/*第一个li默认的样式*/
+.banner_right5_select{
+    background:#fff;
+    border-top:2px solid #00b38a;
+}
+/*热门职务 最新职务下的大数据*/
+.banner_right6{
+    overflow:hidden;
+}
+.banner_right5Z a{
+    /*margin-top:20px;*/
+    margin-left:15px;
+    font-size:18px;
+    text-decoration:none;
+    color:#5db38a;
+    vertical-align:top;
+}
+.banner_right5Z span{
+    margin-left:10px;
+    font-size:14px;
+    color:#999;
+}
+.banner_right5Z i{
+    margin-left:15px;
+    font-size:15px;
+    font-style:normal;
+    color:#fa6041;
+}
+.banner_right5Z em{
+    margin-left:20px;
+    font-size:15px;
+    font-style:normal;
+}
+.banner_right5Z p{
+    margin-left:23px;
+    height:38px;
+    line-height:38px;
+    font-size:15px;
+}
+.banner_right5Z strong{
+    /*margin-left:23px;*/
+    margin-left:15px;
+    height:38px;
+    line-height:38px;
+    font-size:15px;
+    font-weight: normal;
+    border:1px solid #dcdcdc;
+}
+.banner_right5Z b{
+    /*margin-left:23px;*/
+    margin-left:15px;
+    height:38px;
+    line-height:38px;
+    font-size:15px;
+    font-weight: normal;
+    border:1px solid #dcdcdc;
+}
+.banner_right6_1{
+    width:434px;
+    float:left;
+}
+.banner_right6_1_1{
+    margin-top:20px;
+    height:24px;
+}
+.banner_right6_1_2{
+    margin-top:16px;
+    height:36px;
+}
+.banner_right6_1_3{
+    /*margin-top:12px;*/
+    height:38px;
+    background:#fafafa;
+    border-bottom:2px dashed #e1e1e1;
+}
+.banner_right6_2{
+    width:320px;
+    float:left;
+}
+/*先让大数据2先隐藏*/
+#banner_right6Z{
+    display:none;
+}
+/*大数据下的 查看更多*/
+.banner_right21{
+    height:73px;
+    margin-top:25px;
+    border-bottom:2px solid #ececed;
+    overflow:hidden;
+}
+.banner_right21 a{
+    display:block;
+    padding:7px 40px 7px 15px;
+    /*width:120px;*/
+    /*height:32px;*/
+    font-size:16px;
+    /*line-height:32px;*/
+    /*text-align:center;*/
+    color:#fff;
+    /*background-position 的一些属性比较重要*/
+    background:#00b38a url(../images/banner_right21.png) no-repeat 88px center;
+    float:right;
+}
+.banner_right21 a:hover{
+    background-color:#00a47f;
+}
+/*友情链接*/
+.banner_right6 .banner_right22_1{
+    margin:0;
+    padding:3px;
+    font-size:17px;
+    color:#000;
+    float:left;
+}
+.banner_right22_2{
+    width:670px;
+    float:right;
+}
+.banner_right22_2 li{
+    height:20px;
+    padding:5px 0 5px 0;
+}
+.banner_right22_2 a{
+    margin:0; /*此处可以改上面的内容因为  权重问题*/
+    padding:3px 5px;
+    font-size:12px;
+    color:#6d6d55;
+    vertical-align:baseline ;  /*元素放置在父元素的基线上*/
+}
+.banner_right22_2 a:hover{
+    color:#00a266;
+    text-decoration:underline; /*给文本下划线*/
+}
+.banner_right22_2 span{
+    margin:0;
+}
+
+
+/*下部登录注册框*/
+.footer_top{   /*将这个div作为 我要反馈 和  火箭的 定位参照物*/
+    width:1349px;
+    height:65px;
+    position:fixed;
+    bottom:0;
+    z-index:25;
+    background:#74ccaa;
+}
+.footer_top ul{
+    overflow:hidden;
+}
+.footer_top span{
+    font-style:normal;
+    font-size:30px;
+    color:#dafaf4;
+    cursor:default;/*鼠标在上面显示默认的箭头标识   还有小手效果等*/
+}
+.footer_top i{
+    font-size:13px;
+    font-style:normal;
+    color:#dafaf4;
+    cursor:default;
+}
+.footer_top a{
+    /*display:block;*/
+    display:inline-block;  /*display:inline-block 一般用来处理  a 标签 使其更加板正*/
+    /*如果将a标签display：block的话我们可以使用padding来让其处于中间前提是外面有一个盒子*/
+    padding:18px 48px;
+    font-size:23px;
+    text-decoration:none;
+    color:#fff;
+}
+.footer_top_1{
+    /*position:relative;*/   /*为什么这放了一个relative 图片就消失了？*/
+    width:423px;
+    height:65px;
+    background:url(../images/footer_top_1.png) no-repeat 53px 10px;
+    float:left;
+}
+.footer_top_1 img{
+    position:absolute;
+    top:-54px;
+    left:53px;
+    z-index:5;
+}
+.footer_top_2{
+    /*width:*/
+    margin:20px 35px 0 20px;
+    float:left;
+}
+.footer_top_3{
+    margin:20px 130px 0 35px;
+    float:left;
+}
+.footer_top_4{
+    width:145px;
+    height:65px;
+    background:#80c6a1;
+    float:left;
+}
+.footer_top_4:hover{
+    background:#72b798;
+}
+.footer_top_5{
+    width:216px;
+    height:65px;
+    background:#ea7a76;
+    float:left;
+}
+.footer_top_5:hover{
+    background:#e76361;
+}
+.footer_top_5 a{
+    width:120px;
+    background:url(../images/footer_top_3.png) no-repeat 145px center;
+}
+.footer_top_6{
+    width:50px;
+    height:65px;
+    background:#ea7a76;
+    float:left;
+}
+
+/*火箭*/   /*此处定位有点问题*/
+.footer_top_a{
+    /*display:none;*/
+}
+.footer_top_a a{
+    position:fixed;
+    bottom:206px;
+    right:90px;
+    display:inline-block;
+    width:28px;
+    height:64px;
+    background:url(../images/footer_top_4.png) no-repeat ;
+}
+.footer_top_a a:hover{
+    background:url(../images/footer_top_4.png) no-repeat -28px;
+}
+/*我要反馈*/
+.footer_top_b{
+    position:fixed;
+    bottom:146px;
+    right:80px;
+}
+/*.footer_top_b i{*/
+    /*display:block;*/
+    /*width:50px;*/
+    /*height:30px;*/
+    /*cursor:pointer;*/
+    /*background:url(../images/footer_top_5.png) no-repeat 10px 0;*/
+/*}*/
+/*.footer_top_b i:hover{*/
+    /*background:url(../images/footer_top_5.png) no-repeat 10px -30px;*/
+/*}*/
+/*.footer_top_b a{*/
+    /*display:block;*/
+    /*width:50px;*/
+    /*height:20px;*/
+    /*/!*padding-top:34px;*!/*/
+    /*font-size:12px;*/
+    /*text-decoration:none;*/
+    /*color:#000;*/
+/*}*/
+.footer_top_b a{
+    display:block;
+    width:50px;
+    height:50px;
+    /*padding-top:34px;*/
+    font-size:12px;
+    text-decoration:none;
+    color:#000;
+}
+.footer_top_b i{
+    display:block;
+    width:50px;
+    height:30px;
+    /*cursor:pointer;*/
+    background:url(../images/footer_top_5.png) no-repeat 10px 0;
+}
+.footer_top_b i:hover{
+    background:url(../images/footer_top_5.png) no-repeat 10px -30px;
+}
+
+
+/*脚部*/
+.footer{
+    height:68px;
+}
+.footer ul{
+    width:1024px;
+    margin:0 auto;
+}
+.footer li{
+    height:34px;
+    overflow:hidden;
+}
+.footer_down_1 em{
+    width:198px;
+    height:34px;
+    background:url(../images/footer_down_1.png) no-repeat center;
+    float:left;
+}
+.footer li div{
+    margin-top:6px;
+    float:right;
+}
+.footer a{
+    margin:0 15px;
+    font-size:14px;
+    color:#555;
+    text-decoration:none;
+}
+.footer .footer_down_1_1{
+    margin:0 0 0 15px;
+}
+/*最下面二维码*/  /*给它放到 这个a标签下面 只是为了达到 hover效果 即使他的定位是以body为参照物的*/
+.footer_down_1 p{
+    position:fixed;
+    bottom:62px;
+    z-index:30;
+    width:256px;
+    height:256px;
+    border:5px solid #079972;
+    cursor:pointer;
+}
+/*第一个二维码*/
+.footer_down_3{
+    left:400px;
+    background:url(../images/footer_down_3.jpg) no-repeat;
+}
+.footer_down_3{
+    display:none;
+}
+.footer .footer_down_1_1:hover .footer_down_3{
+    display:block;
+}
+/*第二个二维码*/
+.footer_down_4{
+    left:600px;
+    background:url(../images/footer_down_4.jpg) no-repeat;
+}
+.footer_down_4{
+    display:none;
+}
+.footer .footer_down_1_2:hover .footer_down_4{
+    display:block;
+}
+.footer li div span{
+    font-size:14px;
+}
+.footer_down_2{
+    font-size:13px;
+    color:#d5dbe4;
+    text-align:center;   /*针对行内元素可以使用*/
+    line-height:34px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
