@@ -1,0 +1,358 @@
+/* CSS Document */
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+ul, li, p, dl, dt, dd, h3 {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.clear {
+    clear: both;
+}
+
+.head_container {
+    margin: 0 auto;
+}
+
+.head {
+    width: 980px;
+    margin: 0 auto;
+}
+
+.head .logo {
+    float: left;
+    padding: 30px 0;
+}
+
+.head .t {
+    background: url(../image/t_bg.gif) 10px center no-repeat;
+    height: 35px;
+    float: left;
+    padding: 30px 10px;
+}
+
+.head .t li {
+    font-size: 16px;
+    color: #777777;
+    padding-left: 10px;
+}
+
+.head .right {
+    width: 270px;
+    float: right;
+}
+
+.head .right .hd {
+    color: #777777;
+    padding: 10px 10px 10px 75px;
+}
+
+.head .right .hd a {
+    color: #777777;
+}
+
+.head .right .bd {
+    width: 270;
+}
+
+.head .right .bd img {
+    float: left;
+}
+
+.head .right .bd span {
+    float: left;
+    color: #777777;
+    font-size: 6px;
+    padding: 10px;
+}
+
+.head .right .bd .tel {
+    float: left;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 24px;
+}
+
+.nav_container {
+    background: url(../image/nav_container.gif) repeat-x;
+    height: 34px;
+}
+
+.nav {
+    margin: 0 auto;
+    width: 980px;
+    background: url(../image/nav_bg.gif) no-repeat;
+    height: 34px;
+}
+
+.nav a {
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 34px;
+    display: block;
+    height: 34px;
+    width: 133px;
+    float: left;
+    text-align: center;
+}
+
+.nav a:hover {
+    background: url(../image/a_bg.gif) no-repeat;
+    text-decoration: none;
+}
+
+.banner {
+    width: 980px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.box {
+    width: 980px;
+    margin: 0 auto;
+}
+
+.box .hd {
+    width: 980px;
+    height: 37px;
+    background: url(../image/xian_bg.gif) no-repeat;
+    padding-bottom: 20px;
+}
+
+.box .hd span {
+    width: 980px;
+    font-size: 14px;
+    line-height: 37px;
+    margin: 0 auto;
+    color: #FFFFFF;
+    padding-left: 470px;
+}
+
+.box .bd {
+    width: 980px;
+    margin: 0 auto;
+}
+
+.box .bd1 {
+    width: 144px;
+    height: 20px;
+    margin: 10px 30px 0px 20px;
+    float: left;
+}
+
+.box .bd1 img {
+    float: left;
+    padding-left: 10px;
+}
+
+.box .bd1 span {
+    line-height: 20px;
+    padding-left: 10px;
+}
+
+.box .bd1 span a {
+    color: #000000;
+}
+
+.prc {
+    width: 980px;
+    margin: 30px auto;
+}
+
+.prc .hd {
+    width: 980px;
+    height: 37px;
+    background: url(../image/xian_bg.gif) no-repeat;
+    padding-bottom: 30px;
+}
+
+.prc .hd span {
+    width: 980px;
+    font-size: 14px;
+    line-height: 37px;
+    margin: 0 auto;
+    color: #FFFFFF;
+    padding-left: 470px;
+}
+
+.prc .bd {
+    width: 980px;
+    margin: 0 auto;
+}
+
+.prc .bd1 {
+    width: 311px;
+    float: left;
+    padding: 0 23px 40px 0;
+}
+
+.prc .bd1 img {
+    padding-bottom: 5px;
+}
+
+.prc .bd1 .miaoshu {
+    width: 311px;
+    height: 35px;
+    line-height: 35px;
+    color: #FFFFFF;
+    background: #bd3e00;
+    font-size: 14px;
+}
+
+.prc .bd1 .miaoshu a {
+    color: #000000;
+}
+
+.prc .bd1 .bot {
+    width: 311px;
+    margin: 0 auto;
+}
+
+.prc .bd1 .bot .kankan {
+    float: right;
+    padding: 10px 0;
+}
+
+.prc .bd1 .bot .kankan a {
+    display: block;
+    background: url(../image/kankan.gif) no-repeat;
+    width: 110px;
+    height: 30px;
+}
+
+.prc .bd1 .bot .kankan a:hover {
+    background: url(../image/kankan_bg.gif) no-repeat;
+}
+
+.prc .bd1 .bot1 {
+    width: 200px;
+    float: left;
+}
+
+.prc .bd1 .bot .bot1 p {
+    color: #393939;
+    float: left;
+    padding-top: 15px;
+}
+
+.prc .bd1 .bot .bot1 h3 {
+    color: #FF0000;
+    padding-top: 10px;
+    font-family: "微软雅黑";
+    font-size: 16px;
+}
+
+.prc .bd1 .bot .bot1 span {
+    font-family: "新宋体";
+    color: #696868;
+    padding-top: 5px;
+    display: block;
+    text-decoration: line-through;
+    float: left;
+}
+
+.prc .bd2 {
+    width: 311px;
+    float: right;
+    padding: 0 0 40px 0;
+}
+
+.prc .bd2 img {
+    padding-bottom: 5px;
+}
+
+.prc .bd2 .miaoshu {
+    width: 311px;
+    height: 35px;
+    line-height: 35px;
+    color: #FFFFFF;
+    background: #bd3e00;
+    font-size: 14px;
+}
+
+.prc .bd2 .miaoshu a {
+    color: #000000;
+}
+
+.prc .bd2 .bot {
+    width: 311px;
+    margin: 0 auto;
+}
+
+.prc .bd2 .bot .kankan {
+    float: right;
+    padding: 10px 0;
+}
+
+.prc .bd2 .bot .kankan a {
+    display: block;
+    background: url(../image/kankan.gif) no-repeat;
+    width: 110px;
+    height: 30px;
+}
+
+.prc .bd2 .bot .kankan a:hover {
+    background: url(../image/kankan_bg.gif) no-repeat;
+}
+
+.prc .bd2 .bot1 {
+    width: 200px;
+    float: left;
+}
+
+.prc .bd2 .bot .bot1 p {
+    color: #393939;
+    float: left;
+    padding-top: 15px;
+}
+
+.prc .bd2 .bot .bot1 h3 {
+    color: #FF0000;
+    padding-top: 10px;
+    font-family: "微软雅黑";
+    font-size: 16px;
+}
+
+.prc .bd2 .bot .bot1 span {
+    font-family: "新宋体";
+    color: #696868;
+    padding-top: 5px;
+    display: block;
+    text-decoration: line-through;
+    float: left;
+}
+
+.foot_container {
+    background: #303030;
+    height: 147px;
+}
+
+.foot {
+    width: 980px;
+    margin: 0 auto;
+    font-size: 12px;
+    text-align: center;
+    padding: 40px 0;
+    color: #FFFFFF;
+}
+
+.foot a {
+    padding: 10px 5px;
+    color: #FFFFFF;
+}
+
+.foot li {
+    line-height: 26px;
+}
