@@ -321,21 +321,22 @@ html, body {
     left: 0;
     width: 0;
     height: 180px;
-    background: #000;
+    background:#000 url(img/2-1.png) no-repeat 80% 50%;
 }
 
 .a2 b:nth-of-type(2) {
     top: 290px;
-    background: #fff;
+    background: #fff url(img/2-2.png) no-repeat 90% 50%;
 }
 
 .a2 b:nth-of-type(3) {
     top: 490px;
-    background: #fff;
+    background: #fff url(img/2-3.png) no-repeat 90% 50%;
 }
 
 .a2 b:nth-of-type(4) {
     top: 690px;
+    background:#000 url(img/2-4.png) no-repeat 80% 50%;
 }
 
 /*标题动画*/
