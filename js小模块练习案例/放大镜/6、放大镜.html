@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>京东放大镜</title>
+    <style type="text/css">
+        body, div, img {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            border: none;
+        }
+
+        .box, .boxDec {
+            float: left;
+            margin: 20px;
+            width: 350px;
+            height: 350px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .boxDec {
+            display: none;
+            position: relative;
+        }
+
+        .boxDec img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+        }
+
+        .box {
+            position: relative;
+        }
+
+        #mark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 175px;
+            height: 175px;
+            background: #000;
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    <img src="img/iphone.jpg"/>
+</div>
+<div class="boxDec" id="boxDec"><img src="img/iphone_big.jpg"/></div>
+
+<script type="text/javascript">
+    var box = document.getElementById("box"); /*获取左边小盒子*/
+    var boxDec = document.getElementById("boxDec");/*获取右边放大盒子*/
+    var boxDecImg = boxDec.getElementsByTagName("img")[0];/*获取大盒子中的图片*/
+
+    //1、鼠标进入#box创建mark,鼠标在mark层的中间,然后跟着鼠标移动,并且不能超出#box的区域,鼠标离开#mark消失
+    var boxL = box.offsetLeft + box.clientLeft;  /*左偏移量+左边框的宽度*/
+    var boxT = box.offsetTop + box.clientTop;
+    var setPosition = function (e, curEle) {/*传入了事件对象（针对鼠标的）和当前元素*/
+        e = e || window.event;
+
+        //1)计算我们鼠标在中心位置时候的top/left
+        var top = e.clientY - boxT - (curEle.offsetHeight / 2), left = e.clientX - boxL - (curEle.offsetWidth / 2);
+
+        //2)边界判断:左边界(left=0) 上边界(top=0) 右边界(left=box.clientWidth-curEle.clientWidth) 下边界(top=box.clientHeight-curEle.clientHeight)
+        var rightMax = box.clientWidth - curEle.clientWidth, bottomMax = box.clientHeight - curEle.clientHeight;
+        if (left <= 0) {
+            curEle.style.left = 0;
+            /*此处是给当前的元素 也就是mark添加 left和top值*/
+            boxDecImg.style.left = 0;
+        } else if (left >= rightMax) {
+            curEle.style.left = rightMax + "px";
+            boxDecImg.style.left = -(rightMax * 2) + "px";
+            /*最大值的时候这里要乘上大图/小图的比例  次数是2 达到的效果是当mark在小图上移动的时候大图按照相应的倍数来进行移动*/
+        } else {
+            curEle.style.left = left + "px";
+            boxDecImg.style.left = -(left * 2) + "px";
+        }
+        /*当当前元素mark移动的时候 大图区域的图片也要跟着移动相应倍数的距离*/
+        if (top <= 0) {
+            curEle.style.top = 0;
+            boxDecImg.style.top = 0;
+        } else if (top >= bottomMax) {
+            curEle.style.top = bottomMax + "px";
+            /*当小图移动的时候大图移动的距离要是大图比小图的倍数 此处是 2 */
+            boxDecImg.style.top = -(bottomMax * 2) + "px";
+        } else {
+            curEle.style.top = top + "px";
+            boxDecImg.style.top = -(top * 2) + "px";
+        }
+    };
+
+    box.onmouseenter = function (e) {
+    /*鼠标移进的时候 用onmouseenter来默认的阻止事件的冒泡传播*/
+        var mark = document.getElementById("mark");
+        if (!mark) {  /*如果没有mark 则创建一个*/
+            mark = document.createElement("div");
+            mark.id = "mark";/*设置mark的id  给完id  mark才有样式*/
+            this.appendChild(mark); /*将mark添加到box中*/
+        }
+        setPosition(e, mark); /*鼠标在mark中心位置*/
+        boxDec.style.display = "block"; /*当移入的时候我们让相应的大图区域显示*/
+    };
+
+    box.onmousemove = function (e) {
+        var mark = document.getElementById("mark");
+        if (mark) {
+            setPosition(e, mark);
+            /*在盒子中移动的时候就让mark 跟随鼠标 （通过鼠标的坐标来进行操作）*/
+        }
+    };
+
+    box.onmouseleave = function (e) {
+        var mark = document.getElementById("mark");
+        if (mark) {
+            this.removeChild(mark);
+            /*当移除的时候删除mark*/
+        }
+        boxDec.style.display = "none";/*当移除的时候将大图区域隐藏*/
+    };
+</script>
+</body>
+</html>

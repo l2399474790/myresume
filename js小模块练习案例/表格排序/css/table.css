@@ -1,0 +1,41 @@
+body, div, table, thead, tbody, th, tr, td {
+    margin: 0;
+    padding: 0;
+    font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif;
+    font-size: 14px;
+    -webkit-user-select: none;
+    /*或许你常常不希望用户在你的网站上选择文本,无论是否是出于版权的原因.通常大家会有js来实现,另一个方案就是,将-webkit-user-select 和-moz-user-select 的值设为none.
+请谨慎使用这个属性：因为大部分用户是来查看信息的,他们可以复制并存储下来以备将来之用,所以这种方法既无用也无效.如果你禁用了复制粘贴功能,用户还是可以通过查看源文件来获取到他们想要的内容.搞不懂这个属性为什么会被webkit和gecko支持.*/
+}
+
+#tab {
+    margin: 10px auto;
+    padding: 15px;
+    width: 300px;
+    border: 1px solid #31b0d5;
+    border-radius: 10px;
+}
+
+#tab tr {
+    height: 35px;
+    text-align: center;
+}
+
+#tab tr.bg {
+    background: #FFF38F;
+}
+
+#tab tr th {
+    width: 100px;
+}
+
+#tab tr th.cursor {
+    cursor: pointer;
+}
+
+#tab thead tr {
+    background: #E0F2BE;
+}
+
+
+

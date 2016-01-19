@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        body, div {
+            margin: 0;
+            padding: 0;
+            font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif;
+            font-size: 14px;
+            -webkit-user-select: none;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #bg {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: 0.1;
+            filter: alpha(opacity=10);    /*filter:alpha(opacity=10);*/
+        }
+
+        #box {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: #fff;
+            opacity: 0;
+            filter: alpha(opacity=0);
+
+            border-radius: 5px;
+            box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        #boxTop {
+            display: none;
+            padding: 0 10px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+            color:#fff;
+            text-align:center;
+            background: #ccc;
+            opacity: 0;
+            filter: alpha(opacity=0);
+
+            border-radius: 5px 5px 0 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="bg"></div>
+<div id="box">
+    <div id="boxTop">我是弹出层</div>
+</div>
+
+<script type="text/javascript" src="js/utils-1.0.min.js"></script>
+<script type="text/javascript">
+    //width: 420px; height: 520px; opacity: 1; margin的值一直要跟随我们的width和height进行变化
+    //指定具体的时间,然后实现多方向同时运动,最后运动到自己的目标值-->需要设置每一方向的step
+    //步长=(总距离/总时间)*多长时间执行一次(定时器中的时间因子)
+
+    var bg = document.getElementById("bg"), box = document.getElementById("box"), boxTop = document.getElementById("boxTop");
+
+    //duration:总时间 interval:时间因子 callBack:动画完成后的回调
+/*整体的move方法  在这里已经完成box的动画*/
+/*函数的参数可以是一个也可以是多个 可以是 变量 也可以是函数，当是函数的时候我们则称之为回调函数*/
+    var move = function (duration, interval, callBack) {
+        var _this = this;/*此时的this是box*/
+        var stepW = (420 / duration) * interval, stepH = (520 / duration) * interval, stepO = (1 / duration) * interval;/*初始化 步长 每次执行move是都计算一下*/
+        ~function _move() {
+            window.clearTimeout(_this.timer);/*清除定时器*/
+            var curW = utils.css(_this, "width"), curH = utils.css(_this, "height"), curO = parseFloat(utils.css(_this, "opacity"));
+            /*通过utils中的css方法获得宽 高 透明度*/
+            if (curW + stepW >= 420) {/*这里是结束时的代码  最后一步*/
+                utils.setGroupCss(_this, {
+                    /*批量设置box的属性*/
+                    width: 420,
+                    height: 520,
+                    opacity: 1,
+                    marginLeft: -210, /*保持盒子在屏幕中间*/
+                    marginTop: -260
+                });
+                /*当代码执行完成执行回调函数*/
+                typeof callBack === "function" ? callBack.call(_this) : null;
+                return;
+                /*当条件成立的时候就直接执行回调函数，执行完后就直接 return 下面代码则不执行*/
+            }
+            utils.setGroupCss(_this, {/*这是动画的中间过程*/
+                width: curW + stepW,
+                height: curH + stepH,
+                opacity: curO + stepO,
+                marginLeft: -(curW + stepW) / 2,
+                marginTop: -(curH + stepH) / 2
+            });
+            _this.timer = window.setTimeout(_move, interval); /*_move执行函数自身*/
+        }();
+    };
+    /*body的点击事件*/
+    document.body.onclick = function () {
+        /*点击body时 背景和盒子的样式显示  display：block*/
+        bg.style.display = "block";
+        box.style.display = "block";
+       /*执行move方法 把this变为box 传的参数 最后一项是回调函数  这里完成了box的动画*/
+        move.call(box, 300, 10, function () {
+        /*回调函数，box动画执行完毕后执行上部动画*/
+            boxTop.style.display = "block";
+            var count = 0;/*设置一个计数器*/
+            boxTop.timer = window.setInterval(function () {
+                if (count + 0.01 >= 1) {/*最后一步 当满足这个条件的时候执行最后的操作*/
+                    utils.css(boxTop, "opacity", 1);
+                    window.clearInterval(boxTop.timer);
+                    return;
+                }/*不满足上面的条件的时候就执行下面的代码*/
+                count += 0.01;
+                utils.css(boxTop, "opacity", count);
+            }, 10);/*每过10ms执行一次定时器内的方法*/
+
+        });
+    };
+</script>
+</body>
+</html>
