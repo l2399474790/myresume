@@ -1,7 +1,7 @@
 (function () {
     var touch = {};
 
-    //¿ÂÀí»¯º¯Êı
+    //æŸ¯ç†åŒ–å‡½æ•°   /*å°†ä¸¤ä¸ªæ•°ç»„è¿›è¡Œæ‹¼æ¥*/
     function bind(context, callBack) {
         var outerArg = [].slice.call(arguments, 2);
         return function () {
@@ -11,23 +11,26 @@
         }
     }
 
-    //¼ì²âÊÇ·ñÊÇ»¬¶¯ÊÂ¼ş
+    //æ£€æµ‹æ˜¯å¦æ˜¯æ»‘åŠ¨äº‹ä»¶     /*è¿”å›å€¼trueæˆ–è€…false  å·¦å³åˆ’ä¹Ÿæ˜¯å¯ä»¥çš„*/
     function isSwipe(strX, endX, strY, endY) {
         return Math.abs(endX - strX) > 30 || Math.abs(endY - strY) > 30;
     }
 
-    //¼ì²âµ±Ç°»¬¶¯µÄ·½Ïò
+    //æ£€æµ‹å½“å‰æ»‘åŠ¨çš„æ–¹å‘    /*å…ˆåˆ¤æ–­æ˜¯ä¸Šä¸‹åˆ’è¿˜æ˜¯å·¦å³åˆ’ï¼Œç„¶åè½½ç»†åˆ¤æ–­*/
     function swipeDirection(strX, endX, strY, endY) {
         return Math.abs(endX - strX) > Math.abs(endY - strY) ? ((endX - strX) > 0 ? "Right" : "Left") : ((endY - strY) > 0 ? "Down" : "Up");
     }
 
-    //¿ªÊ¼±àĞ´ÊÂ¼şµÄÈı²½²Ù×÷:touchStart¡¢touchMove¡¢touchEnd
-    //name:ÎÒÃÇÄ£ÄâµÄÊÂ¼şÀàĞÍ"tap", "swipe", "swipeLeft", "swipeRight", "swipeUp", "swipeDown"
-    //callback:Ã¿Ò»½×¶ÎÎÒÃÇµ¥¶À´¦ÀíµÄÊÂÇé
+    //å¼€å§‹ç¼–å†™äº‹ä»¶çš„ä¸‰æ­¥æ“ä½œ:touchStartã€touchMoveã€touchEnd
+    //name:æˆ‘ä»¬æ¨¡æ‹Ÿçš„äº‹ä»¶ç±»å‹"tap", "swipe", "swipeLeft", "swipeRight", "swipeUp", "swipeDown"
+    //callback:æ¯ä¸€é˜¶æ®µæˆ‘ä»¬å•ç‹¬å¤„ç†çš„äº‹æƒ…
     function touchStart(e, name, callback) {
         e.preventDefault();
+        /*é˜»æ­¢äº‹ä»¶çš„é»˜è®¤è¡Œä¸º*/
         var touchPoint = e.touches[0];
+        /*è·å–çš„æ˜¯æ‰€æœ‰è§¦æ‘¸ç‚¹çš„ç¬¬ä¸€ä¸ª*/
         this["strX" + name] = touchPoint.pageX;
+        /*å°†è·å–åˆ°çš„å€¼å­˜åˆ°å½“å‰é¡¹çš„è‡ªå®šä¹‰å±æ€§ä¸Š*/
         this["strY" + name] = touchPoint.pageY;
         typeof callback === "function" ? callback.call(this, e) : null;
     }
@@ -36,18 +39,22 @@
         e.preventDefault();
         var touchPoint = e.touches[0];
         this["endX" + name] = touchPoint.pageX;
+        /*è·å–ç»“æŸæ—¶å€™çš„ä½ç½®*/
         this["endY" + name] = touchPoint.pageY;
+        /*å°†æ£€æµ‹è¿‡çš„æ˜¯å¦æ˜¯æ»‘åŠ¨äº‹ä»¶å½“è¶…è¿‡30pxæ—¶è®¤ä¸ºæ˜¯æ»‘åŠ¨äº‹ä»¶*/
         this["isSwipe" + name] = isSwipe(this["strX" + name], this["endX" + name], this["strY" + name], this["endY" + name]);
         checkEvent.call(this, e, name, callback);
     }
 
     function touchEnd(e, name, callBack) {
         e.preventDefault();
+        /*åˆ¤æ–­äº‹ä»¶æ˜¯å¦ä¼šè§¦å‘*/
         checkEvent.call(this, e, name, callBack);
+        /*å½“touchäº‹ä»¶ç»“æŸçš„æ—¶å€™ï¼Œå°†è‡ªå®šä¹‰å±æ€§é‡Œé¢çš„å€¼å›å½’åˆ°åŸå§‹çš„çŠ¶æ€*/
         initDefault.call(this, e, name);
     }
 
-    //¸ù¾İ´«µİ½øÀ´µÄÊÂ¼şÀàĞÍºÍµ±Ç°ÓÃ»§µÄĞĞÎª½øĞĞ±È½Ï,×îºóÅĞ¶ÏÊÇ·ñ½øĞĞ´¥·¢
+    //æ ¹æ®ä¼ é€’è¿›æ¥çš„äº‹ä»¶ç±»å‹å’Œå½“å‰ç”¨æˆ·çš„è¡Œä¸ºè¿›è¡Œæ¯”è¾ƒ,æœ€ååˆ¤æ–­æ˜¯å¦è¿›è¡Œè§¦å‘
     function checkEvent(e, name, callBack) {
         var isSwipe = this["isSwipe" + name];
         switch (name) {
@@ -59,7 +66,9 @@
                 break;
             default:
                 if (isSwipe) {
+                    /*å¦‚æœæ˜¯æ»‘åŠ¨äº‹ä»¶ï¼Œå°±åˆ¤æ–­æ»‘åŠ¨çš„æ–¹å‘*/
                     var swipeDir = swipeDirection(this["strX" + name], this["endX" + name], this["strY" + name], this["endY" + name]);
+                    /*å¦‚æœæ»‘åŠ¨çš„è¯å°±å°†ç›¸åº”çš„ swipe+up/down/left/right*/
                     if (name === "swipe" + swipeDir) {
                         typeof callBack === "function" ? callBack.call(this, e) : null;
                     }
@@ -67,7 +76,7 @@
         }
     }
 
-    //ÔÚtouchÊÂ¼ş½áÊøºó°ÑÉèÖÃµÄ×Ô¶¨ÒåÊôĞÔÖµ»Ø¹éµ½Ô­Ê¼µÄ×´Ì¬
+    //åœ¨touchäº‹ä»¶ç»“æŸåæŠŠè®¾ç½®çš„è‡ªå®šä¹‰å±æ€§å€¼å›å½’åˆ°åŸå§‹çš„çŠ¶æ€
     function initDefault(e, name) {
         ["strX", "endX", "strY", "endY", "isSwipe"].forEach(function (item) {
             this[item + name] = null;
@@ -75,19 +84,23 @@
     }
 
 
-    //options:{start:function->¿ªÊ¼×öµÄÊÂÇé move:function->»¬¶¯×öµÄÊÂÇé end:function->½áÊø×öµÄÊÂÇé}
+    //options:{start:function->å¼€å§‹åšçš„äº‹æƒ… move:function->æ»‘åŠ¨åšçš„äº‹æƒ… end:function->ç»“æŸåšçš„äº‹æƒ…}
+    /*ç»‘å®šäº‹ä»¶*/
     function init(name) {
+        //console.log(name);
         return function (curEle, options) {
             ["start", "move", "end"].forEach(function (item) {
                 var fn = item === "start" ? touchStart : (item === "move" ? touchMove : touchEnd);
                 var tempFn = bind(curEle, fn, name, options[item]);
+                console.log(tempFn);
                 curEle["my" + item + name] = tempFn;
                 curEle.addEventListener("touch" + item, tempFn, false);
             });
-            return this;//->ÎªÁËÊµÏÖÁ´Ê½Ğ´·¨
+            return this;//->ä¸ºäº†å®ç°é“¾å¼å†™æ³•
         }
     }
 
+    /*è§£ç»‘äº‹ä»¶*/
     function uninit(curEle) {
         ["tap", "swipe", "swipeLeft", "swipeRight", "swipeUp", "swipeDown"].forEach(function (name) {
             ["start", "move", "end"].forEach(function (item) {
