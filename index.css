@@ -110,7 +110,7 @@ html, body {
 
 /*飘动动画*/
 #a1 > p:nth-child(1) {
-    -webkit-animation: falp 5s ease-out infinite alternate;
+    -webkit-animation: flap 5s ease-out infinite alternate;
     animation: flap 5s ease-out infinite alternate;
 }
 
@@ -269,6 +269,7 @@ html, body {
         transform: rotate(1080deg);
     }
 }
+
 @keyframes turn {
     from {
         -webkit-transform: rotate(0deg);
@@ -286,7 +287,7 @@ html, body {
 }
 
 #a1 .a1-2 p:nth-child(1) {
-    -webkit-animation:turn 8s linear infinite;
+    -webkit-animation: turn 8s linear infinite;
     animation: turn 8s linear infinite;
 }
 
@@ -296,7 +297,7 @@ html, body {
 }
 
 #a1 .a1-4 p:nth-child(1) {
-    -webkit-animation:turn 12s ease-in infinite;
+    -webkit-animation: turn 12s ease-in infinite;
     animation: turn 12s ease-in infinite;
 }
 
@@ -586,6 +587,29 @@ html, body {
 
 /*内容动画*/
 /*晃动动画帧 1 4用*/
+@-webkit-keyframes shaking {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    25% {
+        -webkit-transform: rotate(-30deg);
+        transform: rotate(-30deg);
+    }
+    50% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    75% {
+        -webkit-transform: rotate(10deg);
+        transform: rotate(10deg);
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
 @keyframes shaking {
     0% {
         -webkit-transform: rotate(0deg);
@@ -609,7 +633,7 @@ html, body {
     }
 }
 
-/*晃动动画帧 1 4用*/
+/*晃动动画帧 2 3用*/
 @-webkit-keyframes shaking1 {
     0% {
         -webkit-transform: rotate(0deg);
@@ -632,6 +656,7 @@ html, body {
         transform: rotate(0deg);
     }
 }
+
 @keyframes shaking1 {
     0% {
         -webkit-transform: rotate(0deg);
@@ -786,6 +811,7 @@ html, body {
         transform: scale(1.3);
     }
 }
+
 @keyframes myScale {
     from {
         -webkit-transform: scale(0.8);
@@ -867,6 +893,7 @@ html, body {
         transform: scale(1.5);
     }
 }
+
 @keyframes myScale1 {
     from {
         -webkit-transform: scale(0.8);
