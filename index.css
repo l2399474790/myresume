@@ -57,6 +57,9 @@ html, body {
     z-index: 111;
 }
 
+
+
+
 /*第一页场景*/
 .a1 {
     width: 100%;
@@ -306,6 +309,9 @@ html, body {
     animation: turn 10s ease-in-out infinite;
 }
 
+
+
+
 /*css3伪类选择器 伪类选择器的权重和标签一样*/
 /*第二页场景*/
 .a2 {
@@ -423,10 +429,14 @@ html, body {
     top: 92px;
     left: 152px;
     /*width:390px;*/
-    width: 420px;
-    height: 180px;
-    background: #000;
-    opacity: 0.3;
+    width: 400px;
+    height: 160px;
+    padding:10px;
+    border-radius:10px;
+    font-size:35px;
+    color:#fff;
+    background-color:rgba(0,0,0,0.5);
+    /*opacity: 0.3;*/
     -webkit-transform: scale(0, 1);
     transform: scale(0, 1);
     -webkit-transform-origin: left;
@@ -475,6 +485,9 @@ html, body {
     -webkit-transition: all 1s ease-out 0.5s;
     transition: all 1s ease-out 0.5s;
 }
+
+
+
 
 /*第三页效果*/
 .a3 {
@@ -556,33 +569,60 @@ html, body {
 }
 
 /*内容区域*/
-.a3 p {
+.a3 div {
     position: absolute;
     top: 30px;
     /*left: 122px;*/
     left: 640px;
-    width: 390px;
-    height: 180px;
-    background: #000;
-    opacity: 0.5;
+    width: 370px;
+    height: 160px;
+    border-radius:10px;
+    font-size:30px;
+    color:#fff;
+    background-color:rgba(0,0,0,0.5);
+    overflow:hidden;
+    /*opacity: 0.5;*/
 }
 
-.a3 p:nth-of-type(2) {
+.a3 div:nth-of-type(2) {
     top: 250px;
     left: -390px;
-    height: 221px;
+    height: 201px;
 }
 
-.a3 p:nth-of-type(3) {
+.a3 div:nth-of-type(3) {
     top: 491px;
     left: -390px;
-    height: 221px;
+    height: 201px;
 }
 
-.a3 p:nth-of-type(4) {
+.a3 div:nth-of-type(4) {
     top: 752px;
     left: 640px;
     height: 180px;
+}
+
+.a3 p{
+    position:absolute;
+    top:0;
+    left:0;
+    padding:10px;
+}
+
+#a3 div:nth-of-type(1) p{
+    top:-160px;
+    -webkit-transition:all 3s linear 2s;
+    transition:all 3s linear 2s;
+}
+#a3 div:nth-of-type(2) p{
+    top:-250px;
+    -webkit-transition:all 3s linear 5s;
+    transition:all 3s linear 5s;
+}
+#a3 div:nth-of-type(3) p{
+    top:-220px;
+    -webkit-transition:all 3s linear 8s;
+    transition:all 3s linear 8s;
 }
 
 /*内容动画*/
@@ -680,7 +720,7 @@ html, body {
     }
 }
 
-#a3 p:nth-of-type(1) {
+#a3 div:nth-of-type(1) {
     left: 122px;
     -webkit-transition: all 0.5s linear 0.5s;
     transition: all 0.5s linear 0.5s;
@@ -688,7 +728,7 @@ html, body {
     animation: shaking 1s linear 0.5s;
 }
 
-#a3 p:nth-of-type(2) {
+#a3 div:nth-of-type(2) {
     left: 122px;
     -webkit-transition: all 0.5s linear 1s;
     transition: all 0.5s linear 1s;
@@ -696,7 +736,7 @@ html, body {
     animation: shaking1 1s linear 1s;
 }
 
-#a3 p:nth-of-type(3) {
+#a3 div:nth-of-type(3) {
     left: 122px;
     -webkit-transition: all 0.5s linear 1s;
     transition: all 0.5s linear 1s;
@@ -704,7 +744,7 @@ html, body {
     animation: shaking1 1s linear 1.5s;
 }
 
-#a3 p:nth-of-type(4) {
+#a3 div:nth-of-type(4) {
     left: 122px;
     -webkit-transition: all 0.5s linear 1.5s;
     transition: all 0.5s linear 1.5s;
@@ -909,6 +949,12 @@ html, body {
     -webkit-animation: myScale1 0.5s linear 2.5s infinite alternate;
     animation: myScale1 0.5s linear 2.5s infinite alternate;
 }
+
+
+
+
+/*第四页场景*/
+
 
 /*.a2 p {*/
 /*position: absolute;*/
