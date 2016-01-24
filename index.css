@@ -92,6 +92,7 @@ html, body {
         transform: rotate(5deg);
     }
 }
+
 @keyframes flap {
     0%, 50%, 100% {
         -webkit-transform: rotate(0deg);
@@ -109,7 +110,7 @@ html, body {
 
 /*飘动动画*/
 #a1 > p:nth-child(1) {
-    -webkit-animation:falp 5s ease-out infinite alternate;
+    -webkit-animation: falp 5s ease-out infinite alternate;
     animation: flap 5s ease-out infinite alternate;
 }
 
@@ -144,6 +145,7 @@ html, body {
     /*left:110px;*/
     height: 425px;
     opacity: 1;
+    -webkit-transition: all 1s linear;
     transition: all 1s linear;
 }
 
@@ -157,12 +159,14 @@ html, body {
     height: 106px;
     opacity: 0;
     background: url(img/font2.png) no-repeat;
+    -webkit-transform: scale(0.8);
     transform: scale(0.8);
 }
 
 #a1 > p:nth-child(3) {
     width: 440px;
     opacity: 1;
+    -webkit-transition: all 1s linear 1s;
     transition: all 1s linear 1s;
 }
 
@@ -176,12 +180,14 @@ html, body {
     height: 106px;
     opacity: 0;
     background: url(img/font3.png) no-repeat;
+    -webkit-transform: scale(0.8);
     transform: scale(0.8);
 }
 
 #a1 > p:nth-child(4) {
     width: 440px;
     opacity: 1;
+    -webkit-transition: all 1s linear 2s;
     transition: all 1s linear 2s;
 }
 
@@ -198,6 +204,7 @@ html, body {
 .a1 .a1-1 {
     right: 20px;
     bottom: -180px;
+    -webkit-transform: scale(0.6) rotate(40deg);
     transform: scale(0.6) rotate(40deg);
 }
 
@@ -205,24 +212,28 @@ html, body {
 .a1 .a1-2 {
     right: 80px;
     bottom: -140px;
+    -webkit-transform: scale(0.8) rotate(25deg);
     transform: scale(0.8) rotate(25deg);
 }
 
 /*第三个风车*/
 .a1 .a1-3 {
     right: 160px;
+    -webkit-transform: rotate(5deg);
     transform: rotate(5deg);
 }
 
 /*第四个风车*/
 .a1 .a1-4 {
     right: 250px;
+    -webkit-transform: scale(1.2) rotate(-10deg);
     transform: scale(1.2) rotate(-10deg);
 }
 
 /*第五个风车*/
 .a1 .a1-5 {
     right: 350px;
+    -webkit-transform: scale(1.4) rotate(-25deg);
     transform: scale(1.4) rotate(-25deg);
 }
 
@@ -248,32 +259,49 @@ html, body {
 }
 
 /*风车转动  turn:转动*/
-@keyframes turn {
+@-webkit-keyframes turn {
     from {
+        -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
     to {
+        -webkit-transform: rotate(1080deg);
+        transform: rotate(1080deg);
+    }
+}
+@keyframes turn {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(1080deg);
         transform: rotate(1080deg);
     }
 }
 
 #a1 .a1-1 p:nth-child(1) {
+    -webkit-animation: turn 5s ease-in-out infinite;
     animation: turn 5s ease-in-out infinite;
 }
 
 #a1 .a1-2 p:nth-child(1) {
+    -webkit-animation:turn 8s linear infinite;
     animation: turn 8s linear infinite;
 }
 
 #a1 .a1-3 p:nth-child(1) {
+    -webkit-animation: turn 6s ease-in-out infinite;
     animation: turn 6s ease-in-out infinite;
 }
 
 #a1 .a1-4 p:nth-child(1) {
+    -webkit-animation:turn 12s ease-in infinite;
     animation: turn 12s ease-in infinite;
 }
 
 #a1 .a1-5 p:nth-child(1) {
+    -webkit-animation: turn 10s ease-in-out infinite;
     animation: turn 10s ease-in-out infinite;
 }
 
@@ -293,6 +321,7 @@ html, body {
     height: 2px;
     background: #000;
     opacity: 0.5;
+    -webkit-transform: scale(0, 1);
     transform: scale(0, 1);
 }
 
@@ -308,6 +337,7 @@ html, body {
 /*竖线动画*/
 #a2 P:nth-child(1) {
     height: 900px;
+    -webkit-transition: all 1s linear;
     transition: all 1s linear;
 }
 
@@ -330,7 +360,9 @@ html, body {
 
 /*横线动画*/
 #a2 p {
+    -webkit-transform: scale(1);
     transform: scale(1);
+    -webkit-transition: all 1s ease-in;
     transition: all 1s ease-in;
 }
 
@@ -341,7 +373,7 @@ html, body {
     left: 0;
     width: 0;
     height: 180px;
-    background:#000 url(img/2-1.png) no-repeat 80% 50%;
+    background: #000 url(img/2-1.png) no-repeat 80% 50%;
 }
 
 .a2 b:nth-of-type(2) {
@@ -356,27 +388,31 @@ html, body {
 
 .a2 b:nth-of-type(4) {
     top: 690px;
-    background:#000 url(img/2-4.png) no-repeat 80% 50%;
+    background: #000 url(img/2-4.png) no-repeat 80% 50%;
 }
 
 /*标题动画*/
 #a2 b:nth-of-type(1) {
     width: 130px;
+    -webkit-transition: all 1s ease-out 0.5s;
     transition: all 1s ease-out 0.5s;
 }
 
 #a2 b:nth-of-type(2) {
     width: 120px;
+    -webkit-transition: all 1s ease-out 1s;
     transition: all 1s ease-out 1s;
 }
 
 #a2 b:nth-of-type(3) {
     width: 120px;
+    -webkit-transition: all 1s ease-out 1s;
     transition: all 1s ease-out 1s;
 }
 
 #a2 b:nth-of-type(4) {
     width: 130px;
+    -webkit-transition: all 1s ease-out 0.5s;
     transition: all 1s ease-out 0.5s;
 }
 
@@ -390,6 +426,7 @@ html, body {
     height: 180px;
     background: #000;
     opacity: 0.3;
+    -webkit-transform: scale(0, 1);
     transform: scale(0, 1);
     -webkit-transform-origin: left;
     transform-origin: left;
@@ -414,22 +451,27 @@ html, body {
 
 /*内容动画*/
 #a2 span {
+    -webkit-transform: scale(1);
     transform: scale(1);
 }
 
 #a2 span:nth-of-type(1) {
+    -webkit-transition: all 1s ease-out 0.5s;
     transition: all 1s ease-out 0.5s;
 }
 
 #a2 span:nth-of-type(2) {
+    -webkit-transition: all 1s ease-out 1s;
     transition: all 1s ease-out 1s;
 }
 
 #a2 span:nth-of-type(3) {
+    -webkit-transition: all 1s ease-out 1s;
     transition: all 1s ease-out 1s;
 }
 
 #a2 span:nth-of-type(4) {
+    -webkit-transition: all 1s ease-out 0.5s;
     transition: all 1s ease-out 0.5s;
 }
 
@@ -470,6 +512,7 @@ html, body {
     top: 730px;
     width: 430px;
     height: 2px;
+    -webkit-transform: scale(0, 1);
     transform: scale(0, 1);
     -webkit-transform-origin: right;
     transform-origin: right;
@@ -482,26 +525,32 @@ html, body {
 /*线条动画*/
 #a3 span:nth-child(1) {
     height: 230px;
+    -webkit-transition: all 0.5s linear 0.5s;
     transition: all 0.5s linear 0.5s;
 }
 
 #a3 span:nth-child(2) {
     width: 430px;
+    -webkit-transition: all 0.5s linear 1s;
     transition: all 0.5s linear 1s;
 }
 
 #a3 span:nth-child(3) {
     height: 502px;
+    -webkit-transition: all 0.5s linear 1.5s;
     transition: all 0.5s linear 1.5s;
 }
 
 #a3 span:nth-child(4) {
+    -webkit-transform: scale(1);
     transform: scale(1);
+    -webkit-transition: all 0.5s linear 2s;
     transition: all 0.5s linear 2s;
 }
 
 #a3 span:nth-child(5) {
     height: 230px;
+    -webkit-transition: all 0.5s linear 2.5s;
     transition: all 0.5s linear 2.5s;
 }
 
@@ -539,62 +588,102 @@ html, body {
 /*晃动动画帧 1 4用*/
 @keyframes shaking {
     0% {
+        -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
     25% {
+        -webkit-transform: rotate(-30deg);
         transform: rotate(-30deg);
     }
     50% {
+        -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
     75% {
+        -webkit-transform: rotate(10deg);
         transform: rotate(10deg);
     }
     100% {
+        -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
 }
 
 /*晃动动画帧 1 4用*/
-@keyframes shaking1 {
+@-webkit-keyframes shaking1 {
     0% {
+        -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
     25% {
+        -webkit-transform: rotate(30deg);
         transform: rotate(30deg);
     }
     50% {
+        -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
     75% {
+        -webkit-transform: rotate(-10deg);
         transform: rotate(-10deg);
     }
     100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+@keyframes shaking1 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    25% {
+        -webkit-transform: rotate(30deg);
+        transform: rotate(30deg);
+    }
+    50% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    75% {
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
 }
 
 #a3 p:nth-of-type(1) {
     left: 122px;
+    -webkit-transition: all 0.5s linear 0.5s;
     transition: all 0.5s linear 0.5s;
+    -webkit-animation: shaking 1s linear 0.5s;
     animation: shaking 1s linear 0.5s;
 }
 
 #a3 p:nth-of-type(2) {
     left: 122px;
+    -webkit-transition: all 0.5s linear 1s;
     transition: all 0.5s linear 1s;
+    -webkit-animation: shaking1 1s linear 1s;
     animation: shaking1 1s linear 1s;
 }
 
 #a3 p:nth-of-type(3) {
     left: 122px;
+    -webkit-transition: all 0.5s linear 1s;
     transition: all 0.5s linear 1s;
+    -webkit-animation: shaking1 1s linear 1.5s;
     animation: shaking1 1s linear 1.5s;
 }
 
 #a3 p:nth-of-type(4) {
     left: 122px;
+    -webkit-transition: all 0.5s linear 1.5s;
     transition: all 0.5s linear 1.5s;
+    -webkit-animation: shaking 1s linear 2s;
     animation: shaking 1s linear 2s;
 }
 
@@ -642,21 +731,25 @@ html, body {
 /*黑点的动画*/
 #a3 b:nth-of-type(1) {
     opacity: 1;
+    -webkit-transition: all 0.5s linear 1s;
     transition: all 0.5s linear 1s;
 }
 
 #a3 b:nth-of-type(3) {
     opacity: 1;
+    -webkit-transition: all 0.5s linear 1.5s;
     transition: all 0.5s linear 1.5s;
 }
 
 #a3 b:nth-of-type(5) {
     opacity: 1;
+    -webkit-transition: all 0.5s linear 2s;
     transition: all 0.5s linear 2s;
 }
 
 #a3 b:nth-of-type(7) {
     opacity: 1;
+    -webkit-transition: all 0.5s linear 2.5s;
     transition: all 0.5s linear 2.5s;
 }
 
@@ -683,6 +776,16 @@ html, body {
 }
 
 /*白色框缩放 动画帧*/
+@-webkit-keyframes myScale {
+    from {
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+    }
+    to {
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+    }
+}
 @keyframes myScale {
     from {
         -webkit-transform: scale(0.8);
@@ -696,25 +799,33 @@ html, body {
 
 #a3 b:nth-of-type(2) {
     opacity: 1;
+    -webkit-transition: all 0.5s linear 1s;
     transition: all 0.5s linear 1s;
+    -webkit-animation: myScale 0.5s linear 2.5s infinite alternate;
     animation: myScale 0.5s linear 2.5s infinite alternate;
 }
 
 #a3 b:nth-of-type(4) {
     opacity: 1;
+    -webkit-transition: all 0.5s linear 1.5s;
     transition: all 0.5s linear 1.5s;
+    -webkit-animation: myScale 0.5s linear 2.5s infinite alternate;
     animation: myScale 0.5s linear 2.5s infinite alternate;
 }
 
 #a3 b:nth-of-type(6) {
     opacity: 1;
+    -webkit-transition: all 0.5s linear 2s;
     transition: all 0.5s linear 2s;
+    -webkit-animation: myScale 0.5s linear 2.5s infinite alternate;
     animation: myScale 0.5s linear 2.5s infinite alternate;
 }
 
 #a3 b:nth-of-type(8) {
     opacity: 1;
+    -webkit-transition: all 0.5s linear 2.5s;
     transition: all 0.5s linear 2.5s;
+    -webkit-animation: myScale 0.5s linear 2.5s infinite alternate;
     animation: myScale 0.5s linear 2.5s infinite alternate;
 }
 
@@ -746,6 +857,16 @@ html, body {
 }
 
 /*黑色框缩放 动画帧*/
+@-webkit-keyframes myScale1 {
+    from {
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+    }
+    to {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+}
 @keyframes myScale1 {
     from {
         -webkit-transform: scale(0.8);
@@ -758,6 +879,7 @@ html, body {
 }
 
 #a3 i {
+    -webkit-animation: myScale1 0.5s linear 2.5s infinite alternate;
     animation: myScale1 0.5s linear 2.5s infinite alternate;
 }
 
