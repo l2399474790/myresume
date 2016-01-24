@@ -610,17 +610,17 @@ html, body {
 }
 
 #a3 div:nth-of-type(1) p{
-    top:-160px;
+    top:-165px;
     -webkit-transition:all 3s linear 2s;
     transition:all 3s linear 2s;
 }
 #a3 div:nth-of-type(2) p{
-    top:-250px;
+    top:-255px;
     -webkit-transition:all 3s linear 5s;
     transition:all 3s linear 5s;
 }
 #a3 div:nth-of-type(3) p{
-    top:-220px;
+    top:-225px;
     -webkit-transition:all 3s linear 8s;
     transition:all 3s linear 8s;
 }
