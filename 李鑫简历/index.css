@@ -1,0 +1,1154 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/*最外面的盒子*/
+#main {
+    width: 640px;
+    height: 960px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -320px;
+    -webkit-transform-origin: top;
+    transform-origin: top;
+}
+
+/*滑动的三角按钮*/
+.tip {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+
+    border: 15px solid #fff;
+    border-color: transparent transparent #fff;
+
+    -webkit-animation: tip 1.5s linear 0s infinite;
+    animation: tip 1.5s linear 0s infinite;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes tip {
+    100% {
+        opacity: 0;
+        bottom: 50px;
+    }
+}
+
+@keyframes tip {
+    100% {
+        opacity: 0;
+        bottom: 50px;
+    }
+}
+
+/*music*/
+.music {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background: url("video/music.svg") no-repeat;
+    background-size: 100%;
+
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+.music audio {
+    display: none;
+}
+
+.music.move {
+    -webkit-animation: audioMove 1s linear 0s infinite;
+    animation: audioMove 1s linear 0s infinite;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes audioMove {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes audioMove {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+
+/*每个li定位*/
+.slide li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /*z-index:2;*/
+    overflow: hidden;
+}
+
+.slide li:nth-child(1) {
+    background: url(img/background1.jpg) no-repeat;
+}
+
+.slide li:nth-child(2) {
+    background: url(img/background2.jpg) no-repeat;
+}
+
+.slide li:nth-child(3) {
+    background: url(img/background3.jpg) no-repeat;
+}
+
+.slide li:nth-child(4) {
+    background: url(img/background4.jpg) no-repeat;
+}
+
+.zIndex {
+    z-index: 111;
+}
+
+
+
+
+/*第一页场景*/
+.a1 {
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+}
+
+/*相册处*/
+.a1 > p:nth-child(1) {
+    position: absolute;
+    top: 10px;
+    right: 75px;
+    width: 295px;
+    height: 413px;
+    border: 20px solid #fff;
+    box-shadow: 5px 5px 15px 5px #3c3c3c;
+    -webkit-transform-origin: top;
+    transform-origin: top;
+}
+
+/*相框飘动 动画帧 flap:飘动*/
+@-webkit-keyframes flap {
+    0%, 50%, 100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    25% {
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+    }
+    75% {
+        -webkit-transform: rotate(5deg);
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes flap {
+    0%, 50%, 100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    25% {
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+    }
+    75% {
+        -webkit-transform: rotate(5deg);
+        transform: rotate(5deg);
+    }
+}
+
+/*飘动动画*/
+#a1 > p:nth-child(1) {
+    -webkit-animation: flap 5s ease-out infinite alternate;
+    animation: flap 5s ease-out infinite alternate;
+}
+
+/*/!*变换背景颜色*!/*/
+/*@keyframes changeB {*/
+/*from {*/
+/*border-color: #fff;*/
+/*}*/
+/*to {*/
+/*border-color: #5eeaff;*/
+/*}*/
+/*}*/
+
+/*#a1 > p:nth-child(1) {*/
+/*animation: changeB 2s ease-in infinite alternate;*/
+/*}*/
+
+/*我的简历*/
+.a1 > p:nth-child(2) {
+    position: absolute;
+    top: 10px;
+    /*left:-40px;*/
+    left: 110px;
+    width: 83px;
+    /*height:425px;*/
+    height: 0;
+    opacity: 0;
+    background: url(img/font1.png) no-repeat;
+}
+
+#a1 > p:nth-child(2) {
+    /*left:110px;*/
+    height: 425px;
+    opacity: 1;
+    -webkit-transition: all 1s linear;
+    transition: all 1s linear;
+}
+
+/*我的天空*/
+.a1 > p:nth-child(3) {
+    position: absolute;
+    top: 480px;
+    left: 80px;
+    /*width:440px;*/
+    width: 0;
+    height: 106px;
+    opacity: 0;
+    background: url(img/font2.png) no-repeat;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+}
+
+#a1 > p:nth-child(3) {
+    width: 440px;
+    opacity: 1;
+    -webkit-transition: all 1s linear 1s;
+    transition: all 1s linear 1s;
+}
+
+/*我的梦想*/
+.a1 > p:nth-child(4) {
+    position: absolute;
+    top: 580px;
+    left: 160px;
+    /*width:440px;*/
+    width: 0;
+    height: 106px;
+    opacity: 0;
+    background: url(img/font3.png) no-repeat;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+}
+
+#a1 > p:nth-child(4) {
+    width: 440px;
+    opacity: 1;
+    -webkit-transition: all 1s linear 2s;
+    transition: all 1s linear 2s;
+}
+
+/*风车的盒子*/
+.a1 div {
+    position: absolute;
+    width: 200px;
+    height: 530px;
+    bottom: -100px;
+}
+
+/*从右到左*/
+/*第一个风车*/
+.a1 .a1-1 {
+    right: 20px;
+    bottom: -180px;
+    -webkit-transform: scale(0.6) rotate(40deg);
+    transform: scale(0.6) rotate(40deg);
+}
+
+/*第二个风车*/
+.a1 .a1-2 {
+    right: 80px;
+    bottom: -140px;
+    -webkit-transform: scale(0.8) rotate(25deg);
+    transform: scale(0.8) rotate(25deg);
+}
+
+/*第三个风车*/
+.a1 .a1-3 {
+    right: 160px;
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+}
+
+/*第四个风车*/
+.a1 .a1-4 {
+    right: 250px;
+    -webkit-transform: scale(1.2) rotate(-10deg);
+    transform: scale(1.2) rotate(-10deg);
+}
+
+/*第五个风车*/
+.a1 .a1-5 {
+    right: 350px;
+    -webkit-transform: scale(1.4) rotate(-25deg);
+    transform: scale(1.4) rotate(-25deg);
+}
+
+/*每个风车的风车头*/
+.a1 div p:nth-child(1) {
+    position: absolute;
+    bottom: 250px;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: url(img/feng1.png) no-repeat;
+    z-index: 1;
+}
+
+/*每个风车的杆*/
+.a1 div p:nth-child(2) {
+    position: absolute;
+    bottom: 0;
+    right: 40px;
+    width: 100px;
+    height: 330px;
+    background: url(img/feng2.png);
+}
+
+/*风车转动  turn:转动*/
+@-webkit-keyframes turn {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(1080deg);
+        transform: rotate(1080deg);
+    }
+}
+
+@keyframes turn {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(1080deg);
+        transform: rotate(1080deg);
+    }
+}
+
+#a1 .a1-1 p:nth-child(1) {
+    -webkit-animation: turn 5s ease-in-out infinite;
+    animation: turn 5s ease-in-out infinite;
+}
+
+#a1 .a1-2 p:nth-child(1) {
+    -webkit-animation: turn 8s linear infinite;
+    animation: turn 8s linear infinite;
+}
+
+#a1 .a1-3 p:nth-child(1) {
+    -webkit-animation: turn 6s ease-in-out infinite;
+    animation: turn 6s ease-in-out infinite;
+}
+
+#a1 .a1-4 p:nth-child(1) {
+    -webkit-animation: turn 12s ease-in infinite;
+    animation: turn 12s ease-in infinite;
+}
+
+#a1 .a1-5 p:nth-child(1) {
+    -webkit-animation: turn 10s ease-in-out infinite;
+    animation: turn 10s ease-in-out infinite;
+}
+
+
+
+
+/*css3伪类选择器 伪类选择器的权重和标签一样*/
+/*第二页场景*/
+.a2 {
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+}
+
+.a2 p {
+    position: absolute;
+    top: 80px;
+    left: 142px;
+    width: 430px;
+    height: 2px;
+    background: #000;
+    opacity: 0.5;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+}
+
+/*竖线*/
+.a2 p:nth-child(1) {
+    top: 30px;
+    left: 140px;
+    width: 2px;
+    /*height:900px;*/
+    height: 0;
+}
+
+/*竖线动画*/
+#a2 P:nth-child(1) {
+    height: 900px;
+    -webkit-transition: all 1s linear;
+    transition: all 1s linear;
+}
+
+/*横线*/
+.a2 p:nth-child(2) {
+    top: 280px;
+}
+
+.a2 p:nth-child(3) {
+    top: 480px;
+}
+
+.a2 p:nth-child(4) {
+    top: 680px;
+}
+
+.a2 p:nth-child(5) {
+    top: 880px;
+}
+
+/*横线动画*/
+#a2 p {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 1s ease-in;
+    transition: all 1s ease-in;
+}
+
+/*标题*/
+.a2 b {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 0;
+    height: 180px;
+    background: #000 url(img/2-1.png) no-repeat 80% 50%;
+}
+
+.a2 b:nth-of-type(2) {
+    top: 290px;
+    background: #fff url(img/2-2.png) no-repeat 90% 50%;
+}
+
+.a2 b:nth-of-type(3) {
+    top: 490px;
+    background: #fff url(img/2-3.png) no-repeat 90% 50%;
+}
+
+.a2 b:nth-of-type(4) {
+    top: 690px;
+    background: #000 url(img/2-4.png) no-repeat 80% 50%;
+}
+
+/*标题动画*/
+#a2 b:nth-of-type(1) {
+    width: 130px;
+    -webkit-transition: all 1s ease-out 0.5s;
+    transition: all 1s ease-out 0.5s;
+}
+
+#a2 b:nth-of-type(2) {
+    width: 120px;
+    -webkit-transition: all 1s ease-out 1s;
+    transition: all 1s ease-out 1s;
+}
+
+#a2 b:nth-of-type(3) {
+    width: 120px;
+    -webkit-transition: all 1s ease-out 1s;
+    transition: all 1s ease-out 1s;
+}
+
+#a2 b:nth-of-type(4) {
+    width: 130px;
+    -webkit-transition: all 1s ease-out 0.5s;
+    transition: all 1s ease-out 0.5s;
+}
+
+/*内容*/
+.a2 span {
+    position: absolute;
+    top: 92px;
+    left: 152px;
+    /*width:390px;*/
+    width: 400px;
+    height: 160px;
+    padding:10px;
+    border-radius:10px;
+    font-size:35px;
+    color:#fff;
+    background-color:rgba(0,0,0,0.5);
+    /*opacity: 0.3;*/
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    -webkit-transform-origin: left;
+    transform-origin: left;
+}
+
+/*第2,3,4块内容区域*/
+.a2 span:nth-of-type(2) {
+    top: 292px;
+    -webkit-transform-origin: right;
+    transform-origin: right;
+}
+
+.a2 span:nth-of-type(3) {
+    top: 492px;
+    -webkit-transform-origin: right;
+    transform-origin: right;
+}
+
+.a2 span:nth-of-type(4) {
+    top: 692px;
+}
+
+/*内容动画*/
+#a2 span {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+#a2 span:nth-of-type(1) {
+    -webkit-transition: all 1s ease-out 0.5s;
+    transition: all 1s ease-out 0.5s;
+}
+
+#a2 span:nth-of-type(2) {
+    -webkit-transition: all 1s ease-out 1s;
+    transition: all 1s ease-out 1s;
+}
+
+#a2 span:nth-of-type(3) {
+    -webkit-transition: all 1s ease-out 1s;
+    transition: all 1s ease-out 1s;
+}
+
+#a2 span:nth-of-type(4) {
+    -webkit-transition: all 1s ease-out 0.5s;
+    transition: all 1s ease-out 0.5s;
+}
+
+
+
+
+/*第三页效果*/
+.a3 {
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+}
+
+/*线条 竖线1*/
+.a3 span {
+    position: absolute;
+    top: 0;
+    left: 100px;
+    width: 2px;
+    /*height:230px;*/
+    height: 0;
+    background: #000;
+    opacity: 0.5;
+}
+
+/*第二条线 横线1*/
+.a3 span:nth-child(2) {
+    top: 230px;
+    /*width:430px;*/
+    width: 0;
+    height: 2px;
+}
+
+.a3 span:nth-child(3) {
+    top: 230px;
+    left: 530px;
+    /*height:500px;*/
+}
+
+.a3 span:nth-child(4) {
+    top: 730px;
+    width: 430px;
+    height: 2px;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    -webkit-transform-origin: right;
+    transform-origin: right;
+}
+
+.a3 span:nth-child(5) {
+    top: 730px;
+}
+
+/*线条动画*/
+#a3 span:nth-child(1) {
+    height: 230px;
+    -webkit-transition: all 0.5s linear 0.5s;
+    transition: all 0.5s linear 0.5s;
+}
+
+#a3 span:nth-child(2) {
+    width: 430px;
+    -webkit-transition: all 0.5s linear 1s;
+    transition: all 0.5s linear 1s;
+}
+
+#a3 span:nth-child(3) {
+    height: 502px;
+    -webkit-transition: all 0.5s linear 1.5s;
+    transition: all 0.5s linear 1.5s;
+}
+
+#a3 span:nth-child(4) {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 0.5s linear 2s;
+    transition: all 0.5s linear 2s;
+}
+
+#a3 span:nth-child(5) {
+    height: 230px;
+    -webkit-transition: all 0.5s linear 2.5s;
+    transition: all 0.5s linear 2.5s;
+}
+
+/*内容区域*/
+.a3 div {
+    position: absolute;
+    top: 30px;
+    /*left: 122px;*/
+    left: 640px;
+    width: 390px;
+    height: 180px;
+    border-radius:10px;
+    font-size:30px;
+    color:#fff;
+    background-color:rgba(0,0,0,0.5);
+    overflow:hidden;
+    /*opacity: 0.5;*/
+}
+
+.a3 div:nth-of-type(2) {
+    top: 250px;
+    left: -390px;
+    height: 221px;
+}
+
+.a3 div:nth-of-type(3) {
+    top: 491px;
+    left: -390px;
+    height: 221px;
+}
+
+.a3 div:nth-of-type(4) {
+    top: 752px;
+    left: 640px;
+    height: 180px;
+}
+
+/*文字上滚效果*/
+.a3 p{
+    position:absolute;
+    top:0;
+    left:0;
+    padding:10px;
+}
+
+#a3 div:nth-of-type(1) p{
+    top:-120px;
+    -webkit-transition:all 3s linear 2s;
+    transition:all 3s linear 2s;
+}
+
+#a3 div:nth-of-type(2) p{
+    top:-180px;
+    -webkit-transition:all 3s linear 5s;
+    transition:all 3s linear 5s;
+}
+
+#a3 div:nth-of-type(3) p{
+    top:-210px;
+    -webkit-transition:all 3s linear 8s;
+    transition:all 3s linear 8s;
+}
+
+/*内容动画*/
+/*晃动动画帧 1 4用*/
+@-webkit-keyframes shaking {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    25% {
+        -webkit-transform: rotate(-30deg);
+        transform: rotate(-30deg);
+    }
+    50% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    75% {
+        -webkit-transform: rotate(10deg);
+        transform: rotate(10deg);
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes shaking {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    25% {
+        -webkit-transform: rotate(-30deg);
+        transform: rotate(-30deg);
+    }
+    50% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    75% {
+        -webkit-transform: rotate(10deg);
+        transform: rotate(10deg);
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
+/*晃动动画帧 2 3用*/
+@-webkit-keyframes shaking1 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    25% {
+        -webkit-transform: rotate(30deg);
+        transform: rotate(30deg);
+    }
+    50% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    75% {
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes shaking1 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    25% {
+        -webkit-transform: rotate(30deg);
+        transform: rotate(30deg);
+    }
+    50% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    75% {
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
+#a3 div:nth-of-type(1) {
+    left: 122px;
+    -webkit-transition: all 0.5s linear 0.5s;
+    transition: all 0.5s linear 0.5s;
+    -webkit-animation: shaking 1s linear 0.5s;
+    animation: shaking 1s linear 0.5s;
+}
+
+#a3 div:nth-of-type(2) {
+    left: 122px;
+    -webkit-transition: all 0.5s linear 1s;
+    transition: all 0.5s linear 1s;
+    -webkit-animation: shaking1 1s linear 1s;
+    animation: shaking1 1s linear 1s;
+}
+
+#a3 div:nth-of-type(3) {
+    left: 122px;
+    -webkit-transition: all 0.5s linear 1s;
+    transition: all 0.5s linear 1s;
+    -webkit-animation: shaking1 1s linear 1.5s;
+    animation: shaking1 1s linear 1.5s;
+}
+
+#a3 div:nth-of-type(4) {
+    left: 122px;
+    -webkit-transition: all 0.5s linear 1.5s;
+    transition: all 0.5s linear 1.5s;
+    -webkit-animation: shaking 1s linear 2s;
+    animation: shaking 1s linear 2s;
+}
+
+/*四个点*/
+.a3 b {
+    position: absolute;
+    top: 210px;
+    left: 80px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+/*透明度由0到1 关键帧*/
+/*@keyframes myOpacity {*/
+/*from{*/
+/*opacity:0;*/
+/*}*/
+/*to{*/
+/*opacity:1;*/
+/*}*/
+/*}*/
+
+/*黑点*/
+.a3 b:nth-of-type(2n-1) {
+    background: #000;
+    z-index: 2;
+}
+
+.a3 b:nth-of-type(3) {
+    left: 510px;
+}
+
+.a3 b:nth-of-type(5) {
+    top: 710px;
+    left: 510px;
+}
+
+.a3 b:nth-of-type(7) {
+    top: 710px;
+    left: 80px;
+}
+
+/*黑点的动画*/
+#a3 b:nth-of-type(1) {
+    opacity: 1;
+    -webkit-transition: all 0.5s linear 1s;
+    transition: all 0.5s linear 1s;
+}
+
+#a3 b:nth-of-type(3) {
+    opacity: 1;
+    -webkit-transition: all 0.5s linear 1.5s;
+    transition: all 0.5s linear 1.5s;
+}
+
+#a3 b:nth-of-type(5) {
+    opacity: 1;
+    -webkit-transition: all 0.5s linear 2s;
+    transition: all 0.5s linear 2s;
+}
+
+#a3 b:nth-of-type(7) {
+    opacity: 1;
+    -webkit-transition: all 0.5s linear 2.5s;
+    transition: all 0.5s linear 2.5s;
+}
+
+/*白色闪烁边框*/
+.a3 b:nth-of-type(2n) {
+    top: 207px;
+    left: 77px;
+    border: 3px solid #fff;
+    z-index: 1;
+}
+
+.a3 b:nth-of-type(4) {
+    left: 507px;
+}
+
+.a3 b:nth-of-type(6) {
+    top: 707px;
+    left: 507px;
+}
+
+.a3 b:nth-of-type(8) {
+    top: 707px;
+    left: 77px;
+}
+
+/*白色框缩放 动画帧*/
+@-webkit-keyframes myScale {
+    from {
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+    }
+    to {
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+    }
+}
+
+@keyframes myScale {
+    from {
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+    }
+    to {
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+    }
+}
+
+#a3 b:nth-of-type(2) {
+    opacity: 1;
+    -webkit-transition: all 0.5s linear 1s;
+    transition: all 0.5s linear 1s;
+    -webkit-animation: myScale 0.5s linear 2.5s infinite alternate;
+    animation: myScale 0.5s linear 2.5s infinite alternate;
+}
+
+#a3 b:nth-of-type(4) {
+    opacity: 1;
+    -webkit-transition: all 0.5s linear 1.5s;
+    transition: all 0.5s linear 1.5s;
+    -webkit-animation: myScale 0.5s linear 2.5s infinite alternate;
+    animation: myScale 0.5s linear 2.5s infinite alternate;
+}
+
+#a3 b:nth-of-type(6) {
+    opacity: 1;
+    -webkit-transition: all 0.5s linear 2s;
+    transition: all 0.5s linear 2s;
+    -webkit-animation: myScale 0.5s linear 2.5s infinite alternate;
+    animation: myScale 0.5s linear 2.5s infinite alternate;
+}
+
+#a3 b:nth-of-type(8) {
+    opacity: 1;
+    -webkit-transition: all 0.5s linear 2.5s;
+    transition: all 0.5s linear 2.5s;
+    -webkit-animation: myScale 0.5s linear 2.5s infinite alternate;
+    animation: myScale 0.5s linear 2.5s infinite alternate;
+}
+
+/*黑色边框 闪烁效果*/
+.a3 i {
+    position: absolute;
+    top: 204px;
+    left: 74px;
+    width: 46px;
+    height: 46px;
+    border: 3px solid #000;
+    border-radius: 50%;
+    opacity: 1;
+    z-index: 1;
+}
+
+.a3 i:nth-of-type(2) {
+    left: 504px;
+}
+
+.a3 i:nth-of-type(3) {
+    top: 704px;
+    left: 504px;
+}
+
+.a3 i:nth-of-type(4) {
+    top: 704px;
+    left: 74px;
+}
+
+/*黑色框缩放 动画帧*/
+@-webkit-keyframes myScale1 {
+    from {
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+    }
+    to {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+}
+
+@keyframes myScale1 {
+    from {
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+    }
+    to {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+}
+
+#a3 i {
+    -webkit-animation: myScale1 0.5s linear 2.5s infinite alternate;
+    animation: myScale1 0.5s linear 2.5s infinite alternate;
+}
+
+
+
+
+/*第四页场景*/
+
+
+/*.a2 p {*/
+/*position: absolute;*/
+/*width: 90px;*/
+/*height: 90px;*/
+/*left: 50%;*/
+/*top: 50%;*/
+/*margin-top: -45px;*/
+/*margin-left: -45px;*/
+/*-webkit-transform: rotate(0deg);*/
+/*}*/
+
+/*.a2 p:nth-child(1) {*/
+/*background: url(images/c1.png) no-repeat;*/
+/*}*/
+
+/*.a2 p:nth-child(2) {*/
+/*background: url(images/c2.png) no-repeat;*/
+/*}*/
+
+/*.a2 p:nth-child(3) {*/
+/*background: url(images/c3.png) no-repeat;*/
+/*}*/
+
+/*.a2 p:nth-child(4) {*/
+/*background: url(images/c4.png) no-repeat;*/
+/*}*/
+
+/*.a2 p:nth-child(5) {*/
+/*background: url(images/c5.png) no-repeat;*/
+/*}*/
+
+/*.a2 p:nth-child(6) {*/
+/*background: url(images/c6.png) no-repeat;*/
+/*}*/
+
+/*#a2 p:nth-child(1) {*/
+/*left: 50%;*/
+/*top: 30%;*/
+/*}*/
+
+/*#a2 p:nth-child(2) {*/
+/*left: 20%;*/
+/*top: 40%;*/
+/*}*/
+
+/*#a2 p:nth-child(3) {*/
+/*left: 80%;*/
+/*top: 40%;*/
+/*}*/
+
+/*#a2 p:nth-child(4) {*/
+/*left: 20%;*/
+/*top: 60%;*/
+/*}*/
+
+/*#a2 p:nth-child(5) {*/
+/*left: 80%;*/
+/*top: 60%;*/
+/*}*/
+
+/*#a2 p:nth-child(6) {*/
+/*left: 50%;*/
+/*top: 70%;*/
+/*}*/
+
+/*#a2 p {*/
+/*-webkit-transform: rotate(360deg);*/
+/*-webkit-transition: all 1s;*/
+/*}*/
+
+/*.a3 {*/
+/*width: 460px;*/
+/*height: 220px;*/
+/*background: url(images/d1.png) no-repeat center;*/
+/*position: absolute;*/
+/*left: 50%;*/
+/*margin-left: -230px;*/
+/*bottom: 20%;*/
+/*}*/
+
+/*#a3 {*/
+/*-webkit-transform: rotateY(720deg);*/
+/*-webkit-transition: 1s;*/
+/*}*/
+
+/*.a4 p {*/
+/*box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.8);*/
+/*color: #fff;*/
+/*line-height: 25px;*/
+/*border-radius: 5px;*/
+/*width: 0;*/
+/*height: 0;*/
+/*position: absolute;*/
+/*overflow: hidden;*/
+/*}*/
+
+/*.a4 p:nth-child(1) {*/
+/*left: 10%;*/
+/*top: 15%;*/
+/*}*/
+
+/*.a4 p:nth-child(2) {*/
+/*left: 53%;*/
+/*top: 18%;*/
+/*}*/
+
+/*.a4 p:nth-child(3) {*/
+/*left: 78%;*/
+/*top: 46%;*/
+/*}*/
+
+/*#a4 p {*/
+/*width: 100px;*/
+/*height: 200px;*/
+/*-webkit-transition: 1s;*/
+/*}*/
+
+/*#a4 p:nth-child(3) {*/
+/*width: 80px;*/
+/*height: 200px;*/
+/*}*/
