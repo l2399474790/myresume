@@ -23,6 +23,7 @@ html, body {
     top: 0;
     margin-left: -320px;
     -webkit-transform-origin: top;
+    transform-origin: top;
 }
 
 /*每个li定位*/
@@ -72,24 +73,43 @@ html, body {
     height: 413px;
     border: 20px solid #fff;
     box-shadow: 5px 5px 15px 5px #3c3c3c;
+    -webkit-transform-origin: top;
     transform-origin: top;
 }
 
 /*相框飘动 动画帧 flap:飘动*/
-@keyframes flap {
+@-webkit-keyframes flap {
     0%, 50%, 100% {
+        -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
     25% {
+        -webkit-transform: rotate(-5deg);
         transform: rotate(-5deg);
     }
     75% {
+        -webkit-transform: rotate(5deg);
+        transform: rotate(5deg);
+    }
+}
+@keyframes flap {
+    0%, 50%, 100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    25% {
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+    }
+    75% {
+        -webkit-transform: rotate(5deg);
         transform: rotate(5deg);
     }
 }
 
 /*飘动动画*/
 #a1 > p:nth-child(1) {
+    -webkit-animation:falp 5s ease-out infinite alternate;
     animation: flap 5s ease-out infinite alternate;
 }
 
