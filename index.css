@@ -574,8 +574,8 @@ html, body {
     top: 30px;
     /*left: 122px;*/
     left: 640px;
-    width: 370px;
-    height: 160px;
+    width: 390px;
+    height: 180px;
     border-radius:10px;
     font-size:30px;
     color:#fff;
@@ -587,13 +587,13 @@ html, body {
 .a3 div:nth-of-type(2) {
     top: 250px;
     left: -390px;
-    height: 201px;
+    height: 221px;
 }
 
 .a3 div:nth-of-type(3) {
     top: 491px;
     left: -390px;
-    height: 201px;
+    height: 221px;
 }
 
 .a3 div:nth-of-type(4) {
@@ -610,17 +610,17 @@ html, body {
 }
 
 #a3 div:nth-of-type(1) p{
-    top:-170px;
+    top:-120px;
     -webkit-transition:all 3s linear 2s;
     transition:all 3s linear 2s;
 }
 #a3 div:nth-of-type(2) p{
-    top:-260px;
+    top:-180px;
     -webkit-transition:all 3s linear 5s;
     transition:all 3s linear 5s;
 }
 #a3 div:nth-of-type(3) p{
-    top:-230px;
+    top:-210px;
     -webkit-transition:all 3s linear 8s;
     transition:all 3s linear 8s;
 }
