@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=0.2,user-scalable=no">
+    <!-- 当initial>1 时 layoutviewport 的宽度是 width的宽度   initial-scale=layoutviewport/vasualviewport
+    当initial<1时 vasualviewport=layoutviewport   宽度 为  device-width/initial- ->
+    <!--控制内容大小，通过js进行缩放，来达到动态缩放的效果-->
+    <style type="text/css">
+        html,body{
+            margin:0;
+            padding:0;
+            width: 100%;
+            height:100%;
+            overflow: hidden;
+        }
+        div{
+            width:320px;
+            height:568px;
+            background:deepskyblue;
+            position: absolute;
+            left:50%;
+            top:0;
+            margin-left: -160px;
+            -webkit-transform-origin: top;
+            font-size:50px;
+            color:#fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div>nihao</div>
+<script type="text/javascript">
+//    var oDiv=document.querySelector("div");
+//    console.log(oDiv);
+//    var winW = window.innerWidth;
+//    var winH = window.innerHeight;
+//    var desW = 320;
+//    var desH = 568;
+//    oDiv.style.webkitTransform = "scale(" + winH/ desH + ")";
+</script>
+</body>
+</html>
