@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7e64085-c6f7-4e44-a6c2-039a013a2c28" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/李鑫简历/index.css" afterPath="$PROJECT_DIR$/李鑫简历/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/李鑫简历/index.html" afterPath="$PROJECT_DIR$/李鑫简历/index.html" />
     </list>
     <ignored path="myresume.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,20 +23,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/李鑫简历/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.3076923">
-              <caret line="141" column="7" selection-start-line="141" selection-start-column="7" selection-end-line="141" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.4753521">
+              <caret line="138" column="32" selection-start-line="138" selection-start-column="32" selection-end-line="138" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/李鑫简历/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.91103786">
+            <state vertical-scroll-proportion="0.0">
               <caret line="469" column="24" selection-start-line="469" selection-start-column="24" selection-end-line="469" selection-end-column="24" />
               <folding />
             </state>
@@ -88,8 +88,8 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/index.css" />
         <option value="$PROJECT_DIR$/李鑫简历/index.js" />
-        <option value="$PROJECT_DIR$/李鑫简历/index.html" />
         <option value="$PROJECT_DIR$/李鑫简历/index.css" />
+        <option value="$PROJECT_DIR$/李鑫简历/index.html" />
       </list>
     </option>
   </component>
@@ -289,14 +289,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/李鑫简历/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/划屏/js/touch.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -305,18 +297,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/李鑫简历/index.html">
+    <entry file="file://$PROJECT_DIR$/李鑫简历/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.3076923">
-          <caret line="141" column="7" selection-start-line="141" selection-start-column="7" selection-end-line="141" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/李鑫简历/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.91103786">
+        <state vertical-scroll-proportion="0.0">
           <caret line="469" column="24" selection-start-line="469" selection-start-column="24" selection-end-line="469" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/李鑫简历/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4753521">
+          <caret line="138" column="32" selection-start-line="138" selection-start-column="32" selection-end-line="138" selection-end-column="32" />
           <folding />
         </state>
       </provider>
