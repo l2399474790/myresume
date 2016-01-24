@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a7e64085-c6f7-4e44-a6c2-039a013a2c28" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.css" afterPath="$PROJECT_DIR$/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="myresume.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,8 +36,8 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.50082374">
-              <caret line="617" column="15" selection-start-line="617" selection-start-column="15" selection-end-line="617" selection-end-column="15" />
+            <state vertical-scroll-proportion="0.40197694">
+              <caret line="619" column="32" selection-start-line="619" selection-start-column="32" selection-end-line="619" selection-end-column="32" />
               <folding>
                 <element signature="e#20#54#0" expanded="false" />
                 <element signature="e#59#84#0" expanded="false" />
@@ -721,8 +720,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50082374">
-          <caret line="617" column="15" selection-start-line="617" selection-start-column="15" selection-end-line="617" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.40197694">
+          <caret line="619" column="32" selection-start-line="619" selection-start-column="32" selection-end-line="619" selection-end-column="32" />
           <folding>
             <element signature="e#20#54#0" expanded="false" />
             <element signature="e#59#84#0" expanded="false" />
